@@ -9,4 +9,8 @@
 
 class DeepspacePipeline(object):
     def process_item(self, item, spider):
+        print('\n'*5, 'PIPELINE BABY', '\n'*5)
+      
+        with open(item['file_urls'].split('/')[-1], 'wb') as f:
+            f.write(item['files'])
         return item
